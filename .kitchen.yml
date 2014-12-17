@@ -1,0 +1,45 @@
+---
+driver:
+  name: vagrant
+
+driver_config:
+  network:
+    - ["forwarded_port", {guest: 8080, host: 8080}]
+  customize:
+    memory: 2048
+    cpus: 2
+
+provisioner:
+  name: chef_zero
+  data_bags_path: './../avi-chef-repo/data_bags'
+
+platforms:
+  - name: centos-6.5
+    driver:
+      box: opscode-centos-6.5
+      box_url: http://chefrepo.aviation.ge.com/bento/opscode_centos-6.5_chef-provisionerless.box
+suites:
+  - name: jenkins
+    run_list:
+      - recipe[yum]
+      - recipe[git::source]
+#      - recipe[build-essential]
+#      - recipe[resolver]
+      - recipe[aw-pipeline::jenkins]
+      - recipe[aw-pipeline::chefdk]
+#      - recipe[chef-zero]
+      - recipe[aw-pipeline::certfix]
+      - recipe[aw-pipeline::knife]
+      - recipe[aw-pipeline::jobs]
+      # - recipe[pipeline::berkshelf]
+#      - recipe[pipeline::lint_test]
+#      - recipe[pipeline::cookbooks]
+    attributes:
+#      chef-zero:
+#        start: true
+      # build-essential:
+      #   compile_time: true
+#      resolver:
+#        nameservers:
+#          - '8.8.8.8'
+#          - '8.8.4.4'

@@ -1,0 +1,23 @@
+export PATH=$PATH:/opt/chef/embedded/bin:/usr/local/git/bin
+# Upload our configuration
+echo "---> Running: 'knife upload roles environments data_bags --chef-repo-path .'"
+knife upload roles environments data_bags --chef-repo-path .
+
+# Let berks work its magic
+pwd
+whoami
+if [ -f Berksfile ];  
+  then
+    if [ -f Berksfile.lock ];
+      then
+        echo "---> Berksfile.lock found.  Running 'berks update':"
+        berks update
+      else
+        echo "---> No Berksfile.lock found.  Running 'berks install':"
+        berks install
+    fi
+    echo "---> Running: 'berks upload'"
+    berks upload -s
+  else
+    echo "---> No Berksfile found.  Skipping all berks action."
+fi
