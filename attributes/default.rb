@@ -9,7 +9,7 @@ default['wc-pipeline']['chef_server']['url'] = "https://mychef.myco.com/organiza
 default['wc-pipeline']['chef_server']['node_name'] = "timmy"
 
 # use example chef-repo and poll master branch every minute by default
-# default['wc-pipeline']['chef-repo']['url'] = "https://github.sw.ge.com/AviationAppFactory/av-prod-chef-repo.git"
+# default['wc-pipeline']['chef-repo']['url'] = "Add Github Repo https link here..."
 # default['wc-pipeline']['chef-repo']['branch'] = "*/master"
 # default['wc-pipeline']['chef-repo']['polling'] = "* * * * *"
 
