@@ -1,9 +1,9 @@
-name             'aw-pipeline'
+name             'wc-pipeline'
 maintainer       'Joe Weinle'
-maintainer_email 'joseph.weinle@ge.com'
+maintainer_email 'joeweinle@gmail.com'
 license          'All rights reserved'
-description      'Installs/Configures aw-pipeline'
-long_description 'Installs/Configures aw-pipeline'
+description      'Installs/Configures wc-pipeline'
+long_description 'Installs/Configures wc-pipeline'
 
 version          '0.1.0'
 depends          'pipeline'

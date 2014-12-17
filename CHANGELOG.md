@@ -1,6 +1,6 @@
 # 0.1.0
 
-Initial release of aw-pipeline
+Initial release of wc-pipeline
 
 * Enhancements
   * an enhancement

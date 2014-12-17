@@ -11,13 +11,13 @@ template "#{node['jenkins']['master']['home']}/proxy.xml" do
   group node['jenkins']['master']['group']
   mode 0644
   variables(
-    :proxy => node['aw-pipeline']['proxy']['https'],
-    :port => node['aw-pipeline']['proxy']['port']
+    :proxy => node['wc-pipeline']['proxy']['https'],
+    :port => node['wc-pipeline']['proxy']['port']
   )
   notifies :execute, "jenkins_command[safe-restart]", :immediately
 end
 
-node['aw-pipeline']['jenkins']['plugins'].each do |p|
+node['wc-pipeline']['jenkins']['plugins'].each do |p|
   jenkins_plugin p do
     action :install
     notifies :execute, "jenkins_command[safe-restart]", :delayed

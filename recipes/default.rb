@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: aw-pipeline
+# Cookbook Name:: wc-pipeline
 # Recipe:: default
 #
 # Copyright (C) 2014 YOUR_NAME

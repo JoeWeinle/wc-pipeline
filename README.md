@@ -1,4 +1,4 @@
-# aw-pipeline-cookbook
+# wc-pipeline-cookbook
 
 TODO: Enter the cookbook description here.
 
@@ -16,7 +16,7 @@ TODO: List your supported platforms.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['aw-pipeline']['bacon']</tt></td>
+    <td><tt>['wc-pipeline']['bacon']</tt></td>
     <td>Boolean</td>
     <td>whether to include bacon</td>
     <td><tt>true</tt></td>
@@ -25,14 +25,14 @@ TODO: List your supported platforms.
 
 ## Usage
 
-### aw-pipeline::default
+### wc-pipeline::default
 
-Include `aw-pipeline` in your node's `run_list`:
+Include `wc-pipeline` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[aw-pipeline::default]"
+    "recipe[wc-pipeline::default]"
   ]
 }
 ```
